@@ -1,13 +1,23 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>OpenAI API</title>
-</head>
-<body>
-    <form action="/submit" method="POST">
-        <textarea name="prompt" rows="10" cols="50"></textarea>
-        <input type="submit" value="Submit">
-    </form>
-    <p>{{ output }}</p>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OpenAI</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <form action="/submit" method="POST">
+                <div class="form-group">
+                    <label for="prompt">Prompt</label>
+                    <textarea class="form-control" id="prompt" name="prompt" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <div class="output">
+                {{ output }}
+            </div>
+        </div>
+    </body>
 </html>
