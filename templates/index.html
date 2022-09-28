@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>OpenAI API</title>
-</head>
-<body>
-    <form action="/submit" method="POST">
-        <textarea name="prompt" rows="10" cols="50"></textarea>
-        <input type="submit" value="Submit">
-    </form>
-    <p>{{ output }}</p>
-</body>
+    <head>
+        <title class="text-light">GPT-3 Demo</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@forevolve/bootstrap-dark@1.0.0/dist/css/bootstrap-dark.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="text-center text-light pt-5">GPT-3 Demo</h1>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <form action="/submit" method="POST">
+                        <div class="form-group">
+                            <label for="prompt" class="text-light">Prompt</label>
+                            <textarea class="form-control bg-light text-dark" name="prompt" rows="6" placeholder="Enter prompt here..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block text-light">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    {% if output %}
+                        <div class="alert alert-success">
+                            {{ output | safe }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
